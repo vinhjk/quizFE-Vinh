@@ -1,0 +1,31 @@
+<h2 class="text-center">User Login</h2>
+<body>
+<img src="https://miro.medium.com/max/3802/1*FgyYfFj19LjrU5CR6oplFA.jpeg" width="1400" height="500">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="col-md-4 offset-md-4" id="login">
+  <div class="form-group row">
+    <label class="col">
+      User Name
+      <input type="userName" class="form-control" formControlName="userName">
+    </label>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('userName').invalid && loginForm.get('userName').touched">
+    Invalid userName!
+  </div>
+  <div class="form-group row">
+    <label class="col">
+      Password
+      <input type="password" class="form-control" formControlName="password">
+    </label>
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+    Invalid password!
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info" type="submit">Submit</button>
+  </div>
+  <div>
+    <a href="#" style="color: red" id="backlg">Back</a>
+  </div>
+</form>
+</body>
